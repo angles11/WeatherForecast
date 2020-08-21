@@ -1,0 +1,45 @@
+<div class="container" style="background:url({{this.backgroundUrl}})" *ngIf="contentLoaded | async">
+  <mat-form-field appearance="fill" class="searchBar">
+    <mat-label>Search</mat-label>
+    <input matInput ngx-google-places-autocomplete [options]='options'
+      (onAddressChange)="handleAddressChange($event)" />
+    <i matSuffix class="fas fa-search fa-lg"></i>
+  </mat-form-field>
+  <div class="weather" style="margin-bottom: 10px;">
+    <div class="weather-title">
+      <h2>{{this.currentWeather.name}} <i class="fas fa-map-marker-alt"></i></h2>
+    </div>
+    <div class="weather-description">
+      <h3 style="text-transform: capitalize; font-style: italic;">{{this.currentWeather.description}}</h3>
+    </div>
+    <div class="weather-temp">
+      <div class="weather-temp-current">
+        <img [src]="'../../assets/animated/' + this.iconName">
+        <span class="currentTemp">{{this.currentWeather.temp}}&deg;</span>
+      </div>
+      <span class="currentTemp">Feels Like: {{this.currentWeather.feels_Like}}&deg;</span>
+    </div>
+    <div class="weather-bottom">
+      <span><i class="fas fa-tint fa-xs"></i> {{this.currentWeather.humidity}}%</span>
+      <span><i class="fas fa-eye fa-xs"></i> {{this.currentWeather.visibility}} km</span>
+      <span><i class="fas fa-wind fa-xs"></i> {{this.currentWeather.wind_Speed}} m/s</span>
+    </div>
+  </div>
+  <div class="weather">
+    <div *ngFor="let day of forecast" class="weather-day">
+      <div style="width: 30%">
+        <span>{{day.date | date:'EEEE'}}</span>
+      </div>
+      <div style=" width: 20%; text-align: center">
+        <img [src]="'../../assets/animated/' + day.iconName" style="height: 35px">
+      </div>
+      <div style="width: 20%; text-align: center">
+        <span><i class=" fas fa-tint fa-xs"></i> {{day.humidity}}%</span>
+      </div>
+      <div style="width: 30%">
+        <span style="text-align: end; display: block"><i class=" fas fa-temperature-low fa-xs"></i> {{day.temp_Min}} /
+          <i class="fas fa-temperature-high fa-xs"></i> {{day.temp_Max}}</span>
+      </div>
+    </div>
+  </div>
+</div>

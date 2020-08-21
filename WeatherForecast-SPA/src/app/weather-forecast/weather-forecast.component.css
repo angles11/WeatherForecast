@@ -1,0 +1,101 @@
+.container {
+  min-height: 100vh;
+  width: 100%;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchBar {
+  width: 60%;
+  color: white;
+}
+
+
+.mat-form-field-appearance-fill .mat-form-field-flex {
+  background-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+.mat-form-field-label {
+  color: white !important;
+}
+
+.mat-focused .mat-form-field-label {
+  color: white !important;
+}
+
+.mat-form-field-underline {
+  background-color: white !important;
+}
+
+.mat-form-field-ripple {
+  background-color: white !important;
+  ;
+}
+
+.weather {
+  width: 60%;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 15px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 640px) {
+  .weather {
+    width: 90%;
+  }
+
+  .searchBar {
+    width: 90%;
+  }
+}
+
+.weather-description {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.weather-temp {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+
+
+.weather-temp-current {
+  display: flex;
+  align-items: center;
+}
+
+.weather-bottom {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+.weather-day {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.currentTemp {
+  font-size: 18px !important;
+}
+
+.weather span {
+  font-size: 14px;
+}
